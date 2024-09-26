@@ -41,7 +41,6 @@ const HotCollections = () => {
     const apiResp = getHotCollectionsData();
     apiResp
       .then((resp) => {
-        console.log(resp.data);
         setHotCollectionsList(resp.data);
       })
       .catch((err) => console.log(err));
@@ -49,7 +48,6 @@ const HotCollections = () => {
 
   useEffect(() => {
     if (hotCollectionsList) {
-      console.log("entered loading state change");
       setLoading(false);
     }
   }, [hotCollectionsList]);
