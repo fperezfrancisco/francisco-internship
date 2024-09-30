@@ -42,7 +42,6 @@ const NewItems = () => {
     apiResp
       .then((resp) => {
         setNewItemsList(resp.data);
-        console.log(resp.data);
       })
       .catch((err) => console.log(err));
   }, []);
