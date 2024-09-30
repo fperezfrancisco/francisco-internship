@@ -42,6 +42,7 @@ const NewItems = () => {
     apiResp
       .then((resp) => {
         setNewItemsList(resp.data);
+        console.log(resp.data);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -62,7 +63,7 @@ const NewItems = () => {
               <div className="small-border bg-color-2"></div>
             </div>
           </div>
-          {loaded && newItemsList ? (
+          {newItemsList ? (
             <OwlCarousel className="owl-theme" {...options}>
               {newItemsList.map((element) => (
                 <div
