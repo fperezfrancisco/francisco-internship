@@ -17,3 +17,9 @@
     width: 100%;
   }
 }
+
+.fakeText {
+  width: 100%;
+  height: 24px;
+  opacity: 0;
+}
