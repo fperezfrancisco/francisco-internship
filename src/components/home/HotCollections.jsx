@@ -5,6 +5,10 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import Skeleton from "../UI/Skeleton";
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const HotCollections = () => {
   //hot collections list state
@@ -58,7 +62,14 @@ const HotCollections = () => {
         <div className="row">
           <div className="col-lg-12">
             <div className="text-center">
-              <h2>Hot Collections</h2>
+              <h2
+                data-aos="fade-in"
+                data-aos-duration="1000"
+                data-aos-easing="ease"
+                data-aos-once="true"
+              >
+                Hot Collections
+              </h2>
               <div className="small-border bg-color-2"></div>
             </div>
           </div>

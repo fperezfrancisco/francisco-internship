@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import AuthorImage from "../../images/author_thumbnail.jpg";
 import axios from "axios";
 import Skeleton from "../UI/Skeleton";
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const TopSellers = () => {
   const [sellersList, setSellersList] = useState();
@@ -28,11 +32,25 @@ const TopSellers = () => {
         <div className="row">
           <div className="col-lg-12">
             <div className="text-center">
-              <h2>Top Sellers</h2>
+              <h2
+                data-aos="fade-in"
+                data-aos-duration="1000"
+                data-aos-easing="ease"
+                data-aos-once="true"
+              >
+                Top Sellers
+              </h2>
               <div className="small-border bg-color-2"></div>
             </div>
           </div>
-          <div className="col-md-12">
+          <div
+            className="col-md-12"
+            data-aos="fade-in"
+            data-aos-duration="1000"
+            data-aos-easing="ease"
+            data-aos-delay="100"
+            data-aos-once="true"
+          >
             <ol className="author_list">
               {!sellersList
                 ? new Array(12).fill(0).map((_, index) => (

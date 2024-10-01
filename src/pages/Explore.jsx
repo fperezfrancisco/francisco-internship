@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
 import SubHeader from "../images/subheader.jpg";
 import ExploreItems from "../components/explore/ExploreItems";
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const Explore = () => {
   useEffect(() => {
@@ -29,7 +33,13 @@ const Explore = () => {
           </div>
         </section>
 
-        <section aria-label="section">
+        <section
+          aria-label="section"
+          data-aos="fade-in"
+          data-aos-duration="1500"
+          data-aos-easing="ease"
+          data-aos-once="true"
+        >
           <div className="container">
             <div className="row">
               <ExploreItems />

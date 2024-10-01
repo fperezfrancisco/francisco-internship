@@ -6,6 +6,10 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import Skeleton from "../UI/Skeleton";
 import CountdownTimer from "../CountdownTimer";
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const NewItems = () => {
   const [newItemsList, setNewItemsList] = useState();
@@ -58,12 +62,19 @@ const NewItems = () => {
         <div className="row">
           <div className="col-lg-12">
             <div className="text-center">
-              <h2>New Items</h2>
+              <h2
+                data-aos="fade-in"
+                data-aos-duration="1000"
+                data-aos-easing="ease"
+                data-aos-once="true"
+              >
+                New Items
+              </h2>
               <div className="small-border bg-color-2"></div>
             </div>
           </div>
           {newItemsList ? (
-            <OwlCarousel className="owl-theme" {...options}>
+            <OwlCarousel {...options}>
               {newItemsList.map((element) => (
                 <div
                   className="col-lg-3 col-md-6 col-sm-6 col-xs-12 hotCollectionContainer"
